@@ -1,0 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8081
+spring:
+  application:
+    name: test-springcloud-client
+feign:
+  hystrix:
+    enabled: true //开户断路器
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+logging:
+  level:
+    project:
+      user:
+        UserClient: debug

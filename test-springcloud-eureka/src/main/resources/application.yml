@@ -1,0 +1,23 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+---
+server:
+  port: 8761
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1        #Eureka实例的主机名
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      defaultZone: http://jacky:admin@peer2:8762/eureka/,http://jacky:admin@peer3:8763/eureka/  #Eureka节点相互注册
+      register-with-eureka: true

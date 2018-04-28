@@ -1,0 +1,5 @@
+com\test\springcloud\service\SchedualServiceHiHystric.class
+com\test\springcloud\controller\BaseController.class
+com\test\springcloud\SpringBootApplicationMain.class
+com\test\springcloud\service\SystemService.class
+com\test\springcloud\controller\sys\SystemController.class
